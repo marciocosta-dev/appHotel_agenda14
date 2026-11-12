@@ -1,0 +1,56 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:appHotel"
+             x:Class="appHotel.App">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Texto padrão: centralizado e escuro -->
+            <Style TargetType="Label">
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="TextColor" Value="{StaticResource Ink}" />
+            </Style>
+
+            <!-- Cartão branco com borda arredondada (substitui o Frame) -->
+            <Style x:Key="Card" TargetType="Border">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="Stroke" Value="{StaticResource Secondary}" />
+                <Setter Property="StrokeThickness" Value="1" />
+                <Setter Property="Padding" Value="15" />
+                <Setter Property="StrokeShape">
+                    <Setter.Value>
+                        <RoundRectangle CornerRadius="16" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- Botão dourado de destaque -->
+            <Style x:Key="BotaoDourado" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource Gold}" />
+                <Setter Property="TextColor" Value="{StaticResource Tertiary}" />
+                <Setter Property="FontFamily" Value="OpenSansSemibold" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="CornerRadius" Value="24" />
+                <Setter Property="HeightRequest" Value="48" />
+                <Setter Property="Padding" Value="14,10" />
+            </Style>
+
+            <!-- Título de seção dentro dos cartões -->
+            <Style x:Key="TituloSecao" TargetType="Label">
+                <Setter Property="TextTransform" Value="Uppercase" />
+                <Setter Property="FontSize" Value="Subtitle" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="{StaticResource Primary}" />
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+
+</Application>

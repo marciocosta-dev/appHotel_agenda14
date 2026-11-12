@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="appHotel.Views.ContratacaoHospedagem"
+             Title="ContratacaoHospedagem"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource Cream}">
+
+    <ScrollView>
+        <VerticalStackLayout VerticalOptions="Center"
+                             Padding="15"
+                             Spacing="12">
+
+            <Label Text="Cálculo da Diária"
+                   FontFamily="OpenSansSemibold"
+                   FontSize="50"
+                   TextColor="{StaticResource Primary}" />
+
+            <!-- Hóspedes -->
+            <Border Style="{StaticResource Card}">
+                <Grid RowDefinitions="Auto, Auto"
+                      ColumnDefinitions="*, *, 2*"
+                      RowSpacing="8">
+
+                    <Label Grid.Row="0" Grid.Column="0" Text="Adultos:" />
+                    <Label Grid.Row="0" Grid.Column="1"
+                           FontAttributes="Bold"
+                           TextColor="{StaticResource Gold}"
+                           Text="{Binding Value}"
+                           BindingContext="{x:Reference stp_adultos}" />
+                    <Stepper Grid.Row="0" Grid.Column="2"
+                             x:Name="stp_adultos"
+                             Minimum="0" Maximum="10" Increment="1" />
+
+                    <Label Grid.Row="1" Grid.Column="0" Text="Crianças:" />
+                    <Label Grid.Row="1" Grid.Column="1"
+                           FontAttributes="Bold"
+                           TextColor="{StaticResource Gold}"
+                           Text="{Binding Value}"
+                           BindingContext="{x:Reference stp_criancas}" />
+                    <Stepper Grid.Row="1" Grid.Column="2"
+                             x:Name="stp_criancas"
+                             Minimum="0" Maximum="10" Increment="1" />
+                </Grid>
+            </Border>
+
+            <!-- Suíte -->
+            <Border Style="{StaticResource Card}">
+                <VerticalStackLayout>
+                    <Label Text="Escolha sua Suíte" Style="{StaticResource TituloSecao}" />
+                    <Picker x:Name="pck_quarto"
+                            Title="Selecione sua Acomodação"
+                            TextColor="{StaticResource Ink}"
+                            TitleColor="{StaticResource Gray500}"
+                            ItemDisplayBinding="{Binding Descricao}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Período -->
+            <Border Style="{StaticResource Card}">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Período da Estadia" Style="{StaticResource TituloSecao}" />
+
+                    <HorizontalStackLayout HorizontalOptions="Center">
+                        <Label Text="Check-in:" />
+                        <DatePicker x:Name="dtpck_checkin"
+                                    TextColor="{StaticResource Ink}"
+                                    DateSelected="dtpck_checkin_DateSelected"
+                                    Format="dd/MM/yyyy" />
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout HorizontalOptions="Center">
+                        <Label Text="Check-out:" />
+                        <DatePicker x:Name="dtpck_checkout"
+                                    TextColor="{StaticResource Ink}"
+                                    Format="dd/MM/yyyy" />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+
+            <Button Text="Avançar"
+                    Style="{StaticResource BotaoDourado}"
+                    Clicked="Button_Clicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

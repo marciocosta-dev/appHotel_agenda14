@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="appHotel.Views.HospedagemContratada"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource Cream}">
+
+    <VerticalStackLayout VerticalOptions="Center"
+                         Padding="15"
+                         Spacing="12">
+
+        <Label Text="Suíte Super Luxo"
+               TextColor="{StaticResource Primary}"
+               FontFamily="OpenSansSemibold"
+               FontSize="50" />
+
+        <Border Style="{StaticResource Card}">
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="30">
+                <HorizontalStackLayout>
+                    <Label Text="Adultos: " />
+                    <Label Text="2" FontAttributes="Bold" TextColor="{StaticResource Gold}" />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text="Crianças: " />
+                    <Label Text="1" FontAttributes="Bold" TextColor="{StaticResource Gold}" />
+                </HorizontalStackLayout>
+            </HorizontalStackLayout>
+        </Border>
+
+        <Border Style="{StaticResource Card}">
+            <Grid ColumnDefinitions="*, *, *" RowDefinitions="Auto, Auto" RowSpacing="4">
+                <Label Grid.Row="0" Grid.Column="0" Text="Check-in:"  FontAttributes="Bold" TextColor="{StaticResource Primary}" />
+                <Label Grid.Row="0" Grid.Column="1" Text="Check-out:" FontAttributes="Bold" TextColor="{StaticResource Primary}" />
+                <Label Grid.Row="0" Grid.Column="2" Text="Estadia:"   FontAttributes="Bold" TextColor="{StaticResource Primary}" />
+
+                <Label Grid.Row="1" Grid.Column="0" Text="27/05/2024" />
+                <Label Grid.Row="1" Grid.Column="1" Text="30/05/2024" />
+                <Label Grid.Row="1" Grid.Column="2" Text="3" />
+            </Grid>
+        </Border>
+
+        <Border Style="{StaticResource Card}" BackgroundColor="{StaticResource Primary}">
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Label Text="Valor Total: " TextColor="{StaticResource Cream}" />
+                <Label Text="R$ 750,00" FontAttributes="Bold" FontSize="20" TextColor="{StaticResource Gold}" />
+            </HorizontalStackLayout>
+        </Border>
+
+        <Button Text="Voltar"
+                Style="{StaticResource BotaoDourado}"
+                HorizontalOptions="Center"
+                WidthRequest="160"
+                Clicked="Button_Clicked" />
+
+    </VerticalStackLayout>
+</ContentPage>

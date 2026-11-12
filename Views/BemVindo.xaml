@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="appHotel.Views.BemVindo"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource Cream}">
+
+    <Grid RowDefinitions="2*, 3*">
+
+        <!-- Cabeçalho azul -->
+        <VerticalStackLayout Grid.Row="0"
+                             BackgroundColor="{StaticResource Primary}"
+                             VerticalOptions="Fill"
+                             Padding="20"
+                             Spacing="4">
+            <Label Text="🏨" FontSize="60" Margin="0,30,0,0" />
+            <Label Text="Maui Hotel"
+                   FontFamily="OpenSansSemibold"
+                   FontSize="52"
+                   TextColor="{StaticResource Gold}" />
+            <Label Text="Conforto e elegância para a sua estadia"
+                   FontSize="14"
+                   TextColor="{StaticResource Cream}" />
+        </VerticalStackLayout>
+
+        <!-- Conteúdo -->
+        <VerticalStackLayout Grid.Row="1"
+                             Padding="20"
+                             Spacing="15"
+                             VerticalOptions="Center">
+
+            <Border Style="{StaticResource Card}">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Sobre o Hotel" Style="{StaticResource TituloSecao}" />
+                    <Label Text="Suítes para todos os perfis, de casais a famílias com crianças. Escolha sua acomodação, defina o período e calcule o valor da diária em segundos." />
+                </VerticalStackLayout>
+            </Border>
+
+            <Grid ColumnDefinitions="*, *, *">
+                <Label Grid.Column="0" Text="🛏️&#10;4 suítes"   FontSize="13" />
+                <Label Grid.Column="1" Text="👨‍👩‍👧&#10;Família"    FontSize="13" />
+                <Label Grid.Column="2" Text="📅&#10;Até 6 meses" FontSize="13" />
+            </Grid>
+
+            <Button Text="Reservar agora"
+                    Style="{StaticResource BotaoDourado}"
+                    Clicked="Button_Clicked" />
+        </VerticalStackLayout>
+
+    </Grid>
+</ContentPage>
